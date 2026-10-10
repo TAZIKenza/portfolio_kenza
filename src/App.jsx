@@ -138,15 +138,19 @@ const SECTIONS = [
 function useActiveSection() {
   const [active, setActive] = useState('')
   useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: '-40% 0px -50% 0px' }
-    )
-    SECTIONS.forEach(([id]) => {
-      const el = document.getElementById(id)
-      if (el) obs.observe(el)
-    })
-    return () => obs.disconnect()
+    const onScroll = () => {
+      const line = window.innerHeight * 0.4
+      let current = ''
+      SECTIONS.forEach(([id]) => {
+        const el = document.getElementById(id)
+        if (el && el.getBoundingClientRect().top <= line) current = id
+      })
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) current = 'contact'
+      setActive(current)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
   return active
 }
