@@ -176,7 +176,43 @@ function BackToTop() {
     </button>
   )
 }
+function EmailMenu() {
+  const [open, setOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const ref = useRef(null)
+  const to = profile.email
+  const subject = encodeURIComponent('Internship opportunity')
 
+  useEffect(() => {
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    document.addEventListener('pointerdown', close)
+    return () => document.removeEventListener('pointerdown', close)
+  }, [])
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(to)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1800)
+    } catch {}
+  }
+
+  return (
+    <div className="email-menu" ref={ref}>
+      <button className="btn dark" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+        Email me
+      </button>
+      {open && (
+        <div className="menu-pop">
+          <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}`} target="_blank" rel="noreferrer">Gmail</a>
+          <a href={`https://outlook.live.com/mail/0/deeplink/compose?to=${to}&subject=${subject}`} target="_blank" rel="noreferrer">Outlook</a>
+          <a href={`mailto:${to}?subject=${subject}`}>Default mail app</a>
+          <button onClick={copy}>{copied ? 'Copied!' : `Copy ${to}`}</button>
+        </div>
+      )}
+    </div>
+  )
+}
 export default function App() {
   const { firstName, lastName } = profile
   const active = useActiveSection()
@@ -291,11 +327,9 @@ export default function App() {
         <div className="certs">
           {certifications.map((c) => (
             <article key={c.name} className="cert">
-              {c.image && (
-                <a className="cert-img" href={c.image} target="_blank" rel="noreferrer">
-                  <img src={c.image} alt={`Certificate: ${c.name}`} loading="lazy" />
-                </a>
-              )}
+              <div className="cert-logo">
+  {c.logo ? <img src={c.logo} alt={`${c.issuer} logo`} /> : <span>{c.issuer[0]}</span>}
+</div>
               <div className="cert-body">
                 <h4>{c.name}</h4>
                 <p className="sub">{c.issuer} · {c.year}</p>
@@ -323,7 +357,7 @@ export default function App() {
               Based in {profile.location}.
             </p>
             <div className="btns">
-              <a className="btn dark" href={`mailto:${profile.email}`}>Email me</a>
+              <EmailMenu />
               <a className="btn line" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               <a className="btn line" href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
             </div>
