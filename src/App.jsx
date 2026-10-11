@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import {
-  profile, education, experience, projects, skills, certifications, soft, languages,
+  profile, education, experience, projects, skills, certifications,
 } from './data.js'
 
 const POSES = ['center', 'left', 'right', 'up', 'down', 'up-left', 'up-right', 'down-left', 'down-right']
@@ -155,6 +155,28 @@ function useActiveSection() {
   return active
 }
 
+function BackToTop() {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 300)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  return (
+    <button
+      className={`to-top ${show ? 'show' : ''}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      aria-label="Back to top"
+    >
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+        strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+  )
+}
+
 export default function App() {
   const { firstName, lastName } = profile
   const active = useActiveSection()
@@ -231,8 +253,10 @@ export default function App() {
               <p>{p.text}</p>
               <div className="card-btns">
                 {p.github && (
+                  
+              
                   <a className="mini dark" href={p.github} target="_blank" rel="noreferrer">
-                    <GithubMark /> GitHub
+                  View on GitHub →
                   </a>
                 )}
                 {p.demo && (
@@ -259,16 +283,7 @@ export default function App() {
             </div>
           ))}
         </div>
-        <div className="extra">
-          <div>
-            <h5>Soft skills</h5>
-            <div className="chips">{soft.map((t) => <span key={t}>{t}</span>)}</div>
-          </div>
-          <div>
-            <h5>Languages</h5>
-            <div className="chips">{languages.map((t) => <span key={t}>{t}</span>)}</div>
-          </div>
-        </div>
+        
       </section>
 
       <section id="certifications" className="section">
@@ -324,7 +339,7 @@ export default function App() {
           </div>
         </div>
       </section>
-
+      <BackToTop />
       <footer>© {new Date().getFullYear()} {firstName} {lastName}</footer>
     </>
   )

@@ -50,6 +50,12 @@ export const experience = [
     date: '10/2024 – Present',
     text: 'Helped organize events related to professional integration, including a career forum, contributing to coordination and to the smooth running of activities.',
   },
+    {
+    role: 'Class Representative',
+    company: 'Class Representatives Council, EMSI',
+    date: '10/2024 – Present',
+    text: 'Class representative within the EMSI Class Representatives Council.',
+  },
 ]
 
 export const projects = [
@@ -58,7 +64,15 @@ export const projects = [
     year: '2026',
     stack: ['Python', 'React (Vite)', 'Deep Learning'],
     text: 'An interview simulation system where candidates practice and get complete feedback on their performance. It analyzes answers, facial expressions, voice and body language, then generates a detailed evaluation report.',
-    github: 'https://github.com/TAZIKenza', // ← colle ici le lien du repo de ce projet
+    github: 'https://github.com/indexkboss/ai-interview-simulator.git', 
+    demo: '', // optionnel : lien de démo
+  },
+    {
+    name: 'Medical Multi-Agent Clinical Guidance System',
+    year: '2026',
+    stack: ['Python','LangGraph', 'LangChain', 'LLaMA 3.2', 'Ollama', 'FastAPI', 'Streamlit', 'MCP'],
+    text: 'Developed a multi-agent AI system for preliminary clinical guidance using LangGraph and LLaMA 3.2, designed to simulate a structured patient orientation workflow.The system conducts a step-by-step patient interview, generates a preliminary clinical summary, detects potential medical red flags, and incorporates Human-in-the-Loop physician validation before producing a structured final clinical report.',
+    github: 'https://github.com/TAZIKenza/Systeme-multi-agents-medical.git', 
     demo: '', // optionnel : lien de démo
   },
   {
@@ -66,7 +80,7 @@ export const projects = [
     year: '2026',
     stack: ['Python', 'LLM', 'LangChain'],
     text: 'A question-answering system to query documents with a language model, built on a RAG architecture that combines retrieval of relevant context with coherent answer generation by an LLM.',
-    github: 'https://github.com/TAZIKenza', // ← colle ici le lien du repo de ce projet
+    github: 'https://github.com/TAZIKenza/chatbot-RAG-argentique.git', 
     demo: '', // optionnel : lien de démo
   },
   {
@@ -74,7 +88,7 @@ export const projects = [
     year: '2025',
     stack: ['React Native', 'FastAPI', 'Neo4j'],
     text: 'A mobile app that recommends laptops based on users’ needs and budget. Includes data collection through scraping, a Neo4j graph database, and a filtering and performance-comparison system to improve recommendation relevance.',
-    github: 'https://github.com/TAZIKenza', // ← colle ici le lien du repo de ce projet
+    github: 'https://github.com/riyadh03/Lapmatch.git', 
     demo: '', // optionnel : lien de démo
   },
 ]
@@ -87,9 +101,8 @@ export const skills = [
 ]
 
 export const certifications = [
-  { name: 'AI for Detection of Anomalies (XGBoost, Autoencoders, GANs)', issuer: 'NVIDIA', year: '2026', image: 'public/certificates/images.png', link: 'https://www.linkedin.com/in/kenzatazi04/' },
-  { name: 'Using Python to Access Web Data', issuer: 'University of Michigan', year: '2025', image: '', link: '' },
+  { name: 'AI for Detection of Anomalies (XGBoost, Autoencoders, GANs)', issuer: 'NVIDIA', year: '2026', image: 'public/certificates/nvidia.png', link: 'https://learn.nvidia.com/certificates?id=gO2dxw0iSpCTgDRPMC9-xw#' },
+  { name: 'Using Python to Access Web Data', issuer: 'University of Michigan', year: '2025', image: 'public/certificates/certif-python.png', link: 'https://coursera.org/share/c251ae448ca5378a85f38a9b9a01c40c' },
 ]
 
-export const soft = ['Clear, professional communication', 'Teamwork', 'Analytical thinking']
-export const languages = ['Arabic (native)', 'French (fluent)', 'English (technical)']
+
