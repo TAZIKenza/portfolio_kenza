@@ -258,3 +258,19 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .hero .btns { grid-column: 1 / -1; grid-row: 7; justify-content: flex-start; }
   .contact .btns { justify-content: flex-start; }
 }
+@media (max-width: 800px) {
+  .nav a { padding: 8px 12px; font-size: 12.5px; }
+}
+.facts { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 16px; }
+.facts li { display: flex; align-items: center; gap: 14px; }
+.facts .ico { width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0; }
+.facts b { display: block; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.facts p { font-size: 15px; color: var(--ink); margin: 0; }
+
+/* le halo décoratif ne doit jamais bloquer les clics */
+.blob { pointer-events: none; z-index: 0; }
+.hero .pill, .hero .intro, .hero .btns, .hero h1, .hero h2, .hero .hi { position: relative; z-index: 1; }
+
+@media (max-width: 800px) {
+  .blob { display: none; }
+}

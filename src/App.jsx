@@ -107,6 +107,9 @@ const ICONS = {
   tools: <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z" />,
   iot: <path d="M9 7h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zM9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4" />,
   doc: <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h6" />,
+  briefcase: <path d="M3 8h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" />,
+  pin: <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />,
+  globe: <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" />,
 }
 
 function Icon({ name }) {
@@ -216,9 +219,17 @@ function EmailMenu() {
 export default function App() {
   const { firstName, lastName } = profile
   const active = useActiveSection()
+    const navRef = useRef(null)
+  useEffect(() => {
+    const nav = navRef.current
+    if (!nav) return
+    const el = nav.querySelector('a.on')
+    const left = el ? el.offsetLeft - (nav.clientWidth - el.offsetWidth) / 2 : 0
+    nav.scrollTo({ left, behavior: 'smooth' })
+  }, [active])
   return (
     <>
-      <nav className="nav">
+            <nav className="nav" ref={navRef}>
         {SECTIONS.map(([id, label]) => (
           <a key={id} href={`#${id}`} className={active === id ? 'on' : ''}>{label}</a>
         ))}
@@ -328,7 +339,7 @@ export default function App() {
           {certifications.map((c) => (
             <article key={c.name} className="cert">
               <div className="cert-logo">
-  {c.logo ? <img src={c.logo} alt={`${c.issuer} logo`} /> : <span>{c.issuer[0]}</span>}
+        {c.logo ? <img src={c.logo} alt={`${c.issuer} logo`} /> : <span>{c.issuer[0]}</span>}
 </div>
               <div className="cert-body">
                 <h4>{c.name}</h4>
@@ -363,13 +374,18 @@ export default function App() {
             </div>
           </div>
           <div className="cv-card">
-            <span className="ico big"><Icon name="doc" /></span>
-            <h4>My CV</h4>
-            <p>Education, experience, projects and skills in one page.</p>
-            <div className="card-btns">
-              <a className="mini dark" href={profile.cv} download>Download PDF</a>
-              <a className="mini line" href={profile.cv} target="_blank" rel="noreferrer">View online</a>
-            </div>
+            <h4>Quick facts</h4>
+            <ul className="facts">
+              <li>
+                <span className="ico"><Icon name="briefcase" /></span>
+                <div><b>Looking for</b><p>End-of-studies internship · 2027</p></div>
+              </li>
+              <li>
+                <span className="ico"><Icon name="pin" /></span>
+                <div><b>Based in</b><p>{profile.location}</p></div>
+              </li>
+             
+            </ul>
           </div>
         </div>
       </section>

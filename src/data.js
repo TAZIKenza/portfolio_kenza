@@ -104,5 +104,3 @@ export const certifications = [
   { name: 'AI for Detection of Anomalies (XGBoost, Autoencoders, GANs)', issuer: 'NVIDIA', year: '2026', logo: '/certificates/Nvidia_logo.webp',image: '/certificates/nvidia.png', link: 'https://learn.nvidia.com/certificates?id=gO2dxw0iSpCTgDRPMC9-xw#' },
   { name: 'Using Python to Access Web Data', issuer: 'University of Michigan', year: '2025', logo: '/certificates/University-of-Michigan-Logo.jpg',image: '/certificates/certif-python.png', link: 'https://coursera.org/share/c251ae448ca5378a85f38a9b9a01c40c' },
 ]
-
-
