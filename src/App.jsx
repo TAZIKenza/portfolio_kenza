@@ -258,7 +258,8 @@ export default function App() {
         <h3>Education</h3>
         <div className="list">
           {education.map((e) => (
-            <article key={e.title} className="item">
+            <article key={e.title} className={`item ${e.logo ? 'has-logo' : ''}`}>
+  {e.logo && <img className="org-logo" src={e.logo} alt="" />}
               <div className="row">
                 <h4>{e.title}</h4>
                 <span className="date">{e.date}</span>
@@ -273,7 +274,8 @@ export default function App() {
         <h3>Experience</h3>
         <div className="list">
           {experience.map((e) => (
-            <article key={e.role + e.date} className="item">
+            <article key={e.role + e.date} className={`item ${e.logo ? 'has-logo' : ''}`}>
+  {e.logo && <img className="org-logo" src={e.logo} alt="" />}
               <div className="row">
                 <h4>{e.role}</h4>
                 <span className="date">{e.date}</span>

@@ -17,16 +17,19 @@ export const education = [
   {
     title: 'Engineering Degree in Computer Science, Data & AI (5th year)',
     place: 'École Marocaine des Sciences de l’Ingénieur (EMSI)',
+    logo: '/logos/emsi.webp',
     date: '10/2024 – Present',
   },
   {
     title: 'Preparatory Cycle in Sciences',
     place: 'École Marocaine des Sciences de l’Ingénieur (EMSI)',
+    logo: '/logos/emsi.webp',
     date: '10/2022 – 06/2024',
   },
   {
     title: 'International Baccalaureate, Mathematical Sciences B',
     place: 'Groupe scolaire Bourgogne',
+    logo: '/logos/gsb.jpg',
     date: '09/2021 – 06/2022',
   },
 ]
@@ -35,24 +38,28 @@ export const experience = [
   {
     role: 'Treasury Reporting Intern (Power BI)',
     company: 'Sonasid',
+    logo: '/logos/sonasid.webp',
     date: '07/2026 – 08/2026',
-    text: 'Built a Power BI platform to monitor and manage treasury. Data architecture and modeling (26 tables), Power Query transformations, complex DAX measures, and 12 analytical dashboards (Cash Forecasts, Bank Performance, GAP Analysis, FX Positions). Deployed the solution in production and validated it with the business.',
+    text: 'Developed a Power BI platform to monitor and steer treasury Designed the data model (26 tables) with Power Query transformations and complex DAX measures Created 12 analytical dashboards: Cash Forecasts, Bank Performance, GAP Analysis, FX Positions Deployed the solution in production and validated it with the business.',
   },
   {
     role: 'Business Intelligence Intern (Power BI)',
     company: 'Sonasid',
+    logo: '/logos/sonasid.webp',
     date: '07/2025',
-    text: 'Built management-control dashboards (sales analysis, KPIs, dynamic visualizations) and designed a treasury forecasting report together with a treasurer. Contributed to structuring the data and setting up financial decision-support tools.',
+    text:  'Delivered management-control dashboards: sales analysis, KPIs, dynamic visualizations     Designed a treasury forecasting report in collaboration with a treasurer Contributed to data structuring and to financial decision-support tools.',
   },
   {
     role: 'Career Center Ambassador',
     company: 'EMSI',
+    logo: '/logos/carrierecentre.jpg',
     date: '10/2024 – Present',
     text: 'Helped organize events related to professional integration, including a career forum, contributing to coordination and to the smooth running of activities.',
   },
     {
     role: 'Class Representative',
     company: 'Class Representatives Council, EMSI',
+    logo: '/logos/classrepresentatives.jpg',
     date: '10/2024 – Present',
     text: 'Class representative within the EMSI Class Representatives Council.',
   },
