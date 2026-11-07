@@ -101,13 +101,18 @@ export const projects = [
 ]
 
 export const skills = [
-  { group: 'Data & AI', icon: 'ai', items: ['Python', 'Machine Learning (Scikit-learn)', 'Deep Learning (CNN)', 'NLP (Transformers)', 'LLM', 'RAG', 'Power BI'] },
-  { group: 'Development & APIs', icon: 'dev', items: ['JavaScript', 'Java', 'C#', 'FastAPI', 'REST API', 'Symfony', 'SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)', 'Neo4j'] },
-  { group: 'Tools & Software Engineering', icon: 'tools', items: ['Excel', 'Git/GitHub', 'Docker', 'Linux', 'Postman'] },
+  { group: 'AI & Data Science', icon: 'ai', items: ['Python', 'Machine Learning', 'Scikit-learn', 'XGBoost', 'Isolation Forest', 'Deep Learning', 'PyTorch', 'TensorFlow', 'CNN', 'RNN', 'Autoencoders', 'GANs', 'NLP', 'LLMs', 'Generative AI', 'Agentic AI', 'RAG', 'LangGraph', 'LangChain', 'Hugging Face', 'Ollama', 'Groq', 'Whisper', 'MediaPipe', 'SHAP', 'Computer Vision'] },
+  { group: 'Data Engineering & Big Data', icon: 'layers', items: ['ETL/ELT', 'Medallion architecture', 'Lambda architecture', 'Kappa architecture', 'Spark', 'Hadoop', 'Kafka', 'Flink', 'Databricks'] },
+  { group: 'Data Analysis & BI', icon: 'chart', items: ['Data cleaning', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Plotly', 'EDA', 'Feature Engineering', 'Statistics', 'Power BI (DAX)', 'Excel'] },
+  { group: 'Development & APIs', icon: 'dev', items: ['JavaScript', 'React', 'Java', 'FastAPI', 'REST API', 'Flask', 'Django'] },
+  { group: 'Databases', icon: 'db', items: ['SQL', 'PostgreSQL', 'MySQL', 'SQL Server', 'SQL*Plus', 'MongoDB', 'Neo4j', 'Firebase Firestore', 'Cassandra', 'SQLite', 'ChromaDB', 'MinIO'] },
+  { group: 'Tools & Software Engineering', icon: 'tools', items: ['Git/GitHub', 'Docker', 'Linux', 'Postman'] },
+  { group: 'Methods & Modeling', icon: 'check', items: ['Agile/Scrum', 'Jira', 'UML'] },
   { group: 'Embedded & IoT', icon: 'iot', items: ['C/C++', 'Arduino'] },
 ]
 
 export const certifications = [
+  { name: 'Oracle Fusion AI Agent Studio Certified Foundations Associate', issuer: 'ORACLE', year: '2026', logo: '/certificates/oracle-logo.png',image: '/certificates/oracle.png', link: 'https://catalog-education.oracle.com/pls/certview/sharebadge?id=9559AFDD9CE33977C44F060B97B2EDE472D6F7B92E81D9F3F670BB652EFE6104' },
   { name: 'AI for Detection of Anomalies (XGBoost, Autoencoders, GANs)', issuer: 'NVIDIA', year: '2026', logo: '/certificates/Nvidia_logo.webp',image: '/certificates/nvidia.png', link: 'https://learn.nvidia.com/certificates?id=gO2dxw0iSpCTgDRPMC9-xw#' },
   { name: 'Using Python to Access Web Data', issuer: 'University of Michigan', year: '2025', logo: '/certificates/University-of-Michigan-Logo.jpg',image: '/certificates/certif-python.png', link: 'https://coursera.org/share/c251ae448ca5378a85f38a9b9a01c40c' },
 ]
